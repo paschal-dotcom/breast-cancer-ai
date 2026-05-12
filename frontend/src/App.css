@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --deep-teal:  #023E58;
+  --teal:       #028090;
+  --mint:       #02C39A;
+  --light-bg:   #F0F7F9;
+  --card-bg:    #FFFFFF;
+  --dark-text:  #1A2E35;
+  --muted:      #5A7A84;
+  --pink:       #D64F6E;
+  --gold:       #F4A62A;
+  --border:     #D0E8EE;
+  --shadow:     0 4px 24px rgba(2, 62, 88, 0.08);
+  --shadow-lg:  0 8px 40px rgba(2, 62, 88, 0.14);
+  --radius:     12px;
+  --radius-lg:  18px;
+  --transition: all 0.2s ease;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--light-bg);
+  color: var(--dark-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* ── Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--light-bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--teal); }
+
+/* ── Buttons ───────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--deep-teal);
+  color: white;
+}
+.btn-primary:hover { background: var(--teal); transform: translateY(-1px); box-shadow: var(--shadow); }
+
+.btn-mint {
+  background: var(--mint);
+  color: white;
+}
+.btn-mint:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--deep-teal);
+  border: 1.5px solid var(--border);
+}
+.btn-outline:hover { border-color: var(--teal); background: var(--light-bg); }
+
+.btn-danger {
+  background: var(--pink);
+  color: white;
+}
+.btn-danger:hover { opacity: 0.9; }
+
+.btn-sm { padding: 7px 14px; font-size: 13px; }
+.btn-lg { padding: 14px 28px; font-size: 15px; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* ── Cards ─────────────────────────────────── */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  padding: 24px;
+}
+
+/* ── Form Elements ─────────────────────────── */
+.form-group { margin-bottom: 18px; }
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.form-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--dark-text);
+  background: white;
+  transition: var(--transition);
+  outline: none;
+}
+.form-input:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(2, 128, 144, 0.1);
+}
+
+/* ── Risk badges ───────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-normal     { background: #E6FFF9; color: #016B50; }
+.badge-suspicious { background: #FFF8E6; color: #8B5E00; }
+.badge-malignant  { background: #FFF0F3; color: #8B1A30; }
+.badge-admin      { background: #EAF4F7; color: var(--teal); }
+.badge-user       { background: #F0F0F0; color: var(--muted); }
+
+/* ── Page header ───────────────────────────── */
+.page-header {
+  margin-bottom: 28px;
+}
+.page-header h1 {
+  font-size: 28px;
+  color: var(--deep-teal);
+  margin-bottom: 4px;
+}
+.page-header p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ── Stats grid ────────────────────────────── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.stat-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.stat-info p { font-size: 13px; color: var(--muted); font-weight: 500; }
+.stat-info h3 { font-size: 26px; font-weight: 700; color: var(--dark-text); font-family: 'DM Sans', sans-serif; }
+
+/* ── Table ─────────────────────────────────── */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th {
+  background: var(--light-bg);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--dark-text);
+}
+tr:hover td { background: var(--light-bg); }
+tr:last-child td { border-bottom: none; }
+
+/* ── Loading spinner ───────────────────────── */
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--teal);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.loading-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  gap: 16px;
+  color: var(--muted);
+}
+
+/* ── Empty state ───────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+}
+.empty-state svg { margin-bottom: 16px; opacity: 0.4; }
+.empty-state h3 { font-size: 18px; color: var(--dark-text); margin-bottom: 8px; font-family: 'DM Sans', sans-serif; }
+
+/* ── Animations ────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.35s ease forwards; }
+
+/* ── Confidence bar ────────────────────────── */
+.confidence-bar {
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.confidence-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+/* ── Risk colors ───────────────────────────── */
+.risk-normal     { color: var(--mint); }
+.risk-suspicious { color: var(--gold); }
+.risk-malignant  { color: var(--pink); }
