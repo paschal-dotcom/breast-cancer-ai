@@ -5,3 +5,13 @@
     }
   }
 }
+{
+  "providers": {
+    "python": {
+      "version": "3.11"
+    }
+  },
+  "env": {
+    "MISE_PYTHON_GITHUB_ATTESTATIONS": "false"
+  }
+}
